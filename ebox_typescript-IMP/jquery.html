@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<body>
+    <input type="button" value="Get Names" id="get-users">
+    <div id="user-list"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $("#get-users").click(function(){
+        $.ajax({
+            type: 'GET',
+            url: 'https://reqres.in/api/users',
+            success: function(data) {
+                var users = data.data;
+                var userListDisplay = "<table>";
+                for (i = 0; i < users.length; i++) {
+                    userListDisplay += "<tr><td>"+"<img src='"+users[i].avatar+"'>"+ "</td><td>"+ users[i].last_name + ", " + users[i].first_name +"<br/>"+ users[i].email;
+                }
+                userListDisplay += "</table>";
+                $("#user-list").html(userListDisplay);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

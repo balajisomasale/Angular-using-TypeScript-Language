@@ -1,0 +1,33 @@
+<form >
+        <div class="block">
+        <h1>Edit Employee</h1>
+
+       <br>
+        <strong>Name:</strong> <br><input type="text"  [(ngModel)]="employeeList.name" name="name"><br>
+        <strong>Salary:</strong> <br><input type="text"  [(ngModel)]="employeeList.salary" name="salary">
+
+<br>
+      
+      <div>
+                <h3>Department</h3>
+                <select name="select" [(ngModel)]="employeeList.Department" #select="ngModel">
+                    <option *ngFor="let i of deplist" 
+                            [value]="i.id" [selected]="employeeList.Department.id == i.id">
+                        {{i.name}}
+                    </option>
+                </select>
+            </div>
+            <!-- <select 
+            name="contactMethod" 
+            id="contactMethod" 
+            class="form-control"
+            [(ngModel)]="contact.contactMethod">
+            <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.label }}</option>
+        </select> -->
+<!-- 
+
+            <option *ngFor="let opt of question.options" [value]="opt.key" [selected]="opt.selected == true">{{opt.selected+opt.value}}</option>
+         -->
+        <!-- <input type="text"  [(ngModel)]="employeeList.Department" name="Department"> -->
+        </div>
+        </form>

@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="card-deck">
+        <div class="card" *ngFor="let item of employeeList">
+            <div class="card-body">
+
+
+                <div class="card-title">
+                    {{item.name}}
+
+                </div>
+                <div class="card-text">{{item.salary | currency:'INR':symbol:'4.2-2'}}</div>
+                <a [routerLink]="['/edit-emp-form-builder',item.id]"  class="card-link">Edit</a>
+                 
+                <button type="button" (click)="delete($event)" [value]="item.id">Delete</button>
+
+
+
+        
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<body>
+    <input type="button" value="Get Names" onclick="getUsers()">
+    <div id="userList"></div>
+    <script>
+    function getUsers() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                var users = response.data;
+                var userListDisplay = "<table>";
+                for (i = 0; i < users.length; i++) {
+                    userListDisplay += "<tr><td>"+"<img src='"+users[i].avatar+"'>"+ "</td><td>"+ users[i].last_name + ", " + users[i].first_name +"<br/>"+ users[i].email;
+                }
+               
+                document.getElementById("userList").innerHTML = userListDisplay;
+                var userListDisplay = "</table>";
+            }
+            
+        };
+        xmlhttp.open("GET", "https://reqres.in/api/users", true);
+        xmlhttp.send();
+    }
+    </script>
+</body>
+</html>

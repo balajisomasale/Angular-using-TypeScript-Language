@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h2>Employee Details </h2>
+<div >
+<ul>
+   <b>ID:</b>{{Employee1.id}}<br>
+  <b>Name:</b>{{Employee1.name}}<br>
+  <b>Salary:</b>{{Employee1.salary}}<br>
+   <b>permanent:</b>{{Employee1.permanent}}<br>
+   <b>Department Id:</b>{{Employee1.department.id}}<br>
+  <b>Department Name:</b>{{Employee1.department.name}}<br>
+  <b>Skills</b><br>
+  <b>Skills Id: Skill Name:</b><br>
+  <p *ngFor="let hero of Employee1.skill" >
+  {{hero.id}}
+  {{hero.name}}
+  <br>
+</p>
+<b>Date of Birth:</b>{{Employee1.da | date:'MMM d,y'}}<br>
+</ul>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+Hello There
+</head>
+
+
+<script>
+
+
+var myJSON = '{"firstName":"John","lastName":"Stoke", "Salary":5000,"permanentStaff":true,"Department":{"id":3,"name":"payroll"}}';
+var myObj = JSON.parse(myJSON);
+
+console.log("FirstName: "+myObj.firstName);
+console.log("LastName: "+myObj.lastName);
+console.log("Salary: "+myObj.Salary);
+console.log("Permanent Staff: "+myObj.permanentStaff);
+console.log("Department Id: "+myObj.Department.id);
+console.log("Department Name: "+myObj.Department.name);
+</script>
+
+</html>

@@ -1,0 +1,8 @@
+<p>Model Binding</p>
+<button type="btn btn-success"(click)="Sub()" id="clickMe1"  [disabled]='rd'><i class="material-icons">remove_circle</i></button>
+<input type="text" [(ngModel)]='x' id="test" value="{{x}}">
+<button type="btn btn-success"(click)="Add()" id="clickMe2" ><i class="material-icons">add_circle</i></button>
+
+
+<p *ngIf="str" id="simpleClick">Add button clicked</p>
+
